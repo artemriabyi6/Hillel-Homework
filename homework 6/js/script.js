@@ -38,7 +38,7 @@ for(let i = 0; i < arr.length; i++) {
       continue label;
     }
   }
-  console.log(arr[i])
+  console.log('знайдено просте число: ',arr[i])
 }*/
 
 
@@ -53,3 +53,5 @@ for(let i = 0; i < arr.length; i++) {
       }  
     }
   }*/
+
+

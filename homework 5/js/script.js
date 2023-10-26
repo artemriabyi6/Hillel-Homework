@@ -254,4 +254,14 @@ for(let i = 1; i <=10; i++){
 }*/
 
 
+let tableNums = ''
+for(a = 1; a < 10; a++) {
+   for(b = 1; b < 10; b++) {
+      tableNums += a * b + ' '
+   }
+   alert(`Таблиця множення на ${a}`)
+   alert(tableNums)
+   tableNums = ''
+}
 
+   

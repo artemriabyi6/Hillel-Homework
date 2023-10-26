@@ -1,30 +1,18 @@
-const getContainer = document.querySelector('#container')
-const getprevBtn = document.querySelector('#prev')
-const getnextBtn = document.querySelector('#next')
-const getSlide1 = document.querySelector('#item-1')
-const getSlide2 = document.querySelector('#item-2')
-const getSlide3 = document.querySelector('#item-3')
-const getSlide4 = document.querySelector('#item-4')
+const table = document.createElement('table')
+const tBody = document.createElement('tBody')
 
+let counter = 1
 
-let AllSlides = [getSlide1, getSlide2, getSlide3, getSlide4]
-
-function addClass(arr) {
-    arr.forEach((e) => {
-        let classes = e.classList
-        if(!classes.contains('active')) {
-            console.log(e)
-        }
-    })
+for(let i = 0; i < 10; i++) {
+    const row = document.createElement('tr')
+    for(let j = 0; j < 10; j++) {
+        const cell = document.createElement('td')
+        cell.textContent = counter++
+        row.appendChild(cell)
+    }
+    tBody.appendChild(row)
 }
-addClass(AllSlides)
-let increment = 0
 
+table.appendChild(tBody)
 
-
-getnextBtn.addEventListener('click', () => {
-    AllSlides[increment].classList.remove('active')
-    AllSlides[increment++].classList.add('active')
-    
-})
-
+document.body.append(table)

@@ -1,4 +1,3 @@
-
 const getContainer = document.querySelector('.container')
 const getTimeWrapper = document.getElementById('time')
 const mainTitle = document.querySelector('h1')
@@ -53,7 +52,6 @@ class StopWatch {
     reset() {
         this.time = {hours: '00', minutes: '00', seconds: '00'}
         mainTitle.textContent = `${this.time.hours}:${this.time.minutes}:${this.time.seconds}`
-        
         return this
     }
 }
@@ -78,68 +76,3 @@ resetBtn.addEventListener('click', () => {
     stopWatch.reset()
     stopWatch.pause()
 })
-
-
-
-// class StopWatch {
-//       constructor(callback) {
-//         this.callback = callback;
-//         this.isRunning = false;
-//         this.hours = 0;
-//         this.minutes = 0;
-//         this.seconds = 0;
-//         this.intervalId = null;
-//       }
-    
-//       start() {
-//         if (!this.isRunning) {
-//           this.intervalId = setInterval(() => {
-//             this.seconds++;
-//             if (this.seconds === 60) {
-//               this.seconds = 0;
-//               this.minutes++;
-//             }
-//             if (this.minutes === 60) {
-//               this.minutes = 0;
-//               this.hours++;
-//             }
-//             const time = { hours: this.hours, minutes: this.minutes, seconds: this.seconds };
-//             this.callback(time);
-//             mainTitle.textContent = `${stopWatch.hours}:${stopWatch.minutes}:${stopWatch.seconds}`
-//           }, 1000);
-//           this.isRunning = true;
-//         }
-//       }
-    
-//       pause() {
-//         if (this.isRunning) {
-//           clearInterval(this.intervalId);
-//           this.isRunning = false;
-//         }
-//       }
-    
-//       reset() {
-//         this.pause();
-//         this.hours = 0;
-//         this.minutes = 0;
-//         this.seconds = 0;
-//       }
-    
-//       getTime() {
-//         return { hours: this.hours, minutes: this.minutes, seconds: this.seconds };
-//       }
-//     }
-    
-//     const onTick = (time) => console.log(time);
-//     const stopWatch = new StopWatch(onTick);
-
-    
-
-     
-    
-
-
-
-
-
-

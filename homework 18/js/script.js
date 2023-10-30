@@ -1,11 +1,4 @@
 
-const getContainer = document.querySelector('.container')
-const getTimeWrapper = document.getElementById('time')
-const mainTitle = document.querySelector('h1')
-const startBtn = document.querySelector('#start')
-const pauseBtn = document.querySelector('#pause')
-const getTimeBtn = document.querySelector('#getTime')
-const resetBtn = document.querySelector('#reset')
 
 
 
@@ -28,7 +21,7 @@ class StopWatch {
                 +this.time.hours++
                 this.time.minutes = 0
             }
-            mainTitle.textContent = `${this.time.hours}:${this.time.minutes}:${this.time.seconds}`
+            console.log(this.time)
             }, 1000)
         }
         this.isRunning = true
@@ -44,40 +37,41 @@ class StopWatch {
               }
 
     getTime() {
-        const lap = document.createElement('h2')
-        lap.textContent = `${this.time.hours}:${this.time.minutes}:${this.time.seconds}`
-        document.body.append(lap)
+        console.log(this.time)
+        
         return this
     }
 
     reset() {
         this.time = {hours: '00', minutes: '00', seconds: '00'}
-        mainTitle.textContent = `${this.time.hours}:${this.time.minutes}:${this.time.seconds}`
-        
+        if (this.isRunning) {
+            clearInterval(this.setIntervalId);
+            this.isRunning = false;
+          }
         return this
     }
 }
 
 const stopWatch = new StopWatch()
 
-mainTitle.textContent = `${stopWatch.time.hours}:${stopWatch.time.minutes}:${stopWatch.time.seconds}`
+// mainTitle.textContent = `${stopWatch.time.hours}:${stopWatch.time.minutes}:${stopWatch.time.seconds}`
 
-startBtn.addEventListener('click', () => {
-    stopWatch.start()
-})
+// startBtn.addEventListener('click', () => {
+//     stopWatch.start()
+// })
 
-pauseBtn.addEventListener('click', () => {
-    stopWatch.pause()
-})
+// pauseBtn.addEventListener('click', () => {
+//     stopWatch.pause()
+// })
 
-getTimeBtn.addEventListener('click', () => {
-    stopWatch.getTime()
-})
+// getTimeBtn.addEventListener('click', () => {
+//     stopWatch.getTime()
+// })
 
-resetBtn.addEventListener('click', () => {
-    stopWatch.reset()
-    stopWatch.pause()
-})
+// resetBtn.addEventListener('click', () => {
+//     stopWatch.reset()
+//     stopWatch.pause()
+// })
 
 
 

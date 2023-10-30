@@ -1,5 +1,5 @@
-export function sum(a, b) {
-    return a + b
-}
+// export function sum(a, b) {
+//     return a + b
+// }
 
-export default {Artem: 22}
+// export default {Artem: 22}

@@ -13,8 +13,8 @@ form.addEventListener('submit', () => {
   }
 
   const title = document.querySelector('h2')
-  title.textContent = 'Result of registration'
-  
+  title.textContent = 'Registration result'
+
   const p1 = document.querySelector('#form1')
   p1.textContent = `Username: ${userName.value}`
 

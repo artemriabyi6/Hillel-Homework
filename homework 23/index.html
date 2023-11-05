@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/script.js" defer></script>
+    <title>Document</title>
+</head>
+<body>
+    <form action="#" method="post" id="form">
+        <label for="username">Username:</label>
+        <input type="text" id="username"  name="username" required>
+        <br>
+        <br>
+        <label for="BirthdayData">Birthday:</label>
+        <input type="date" name="BirthdayData" id="birthdaydata">
+        <br>
+        <br>
+        <label for="gender">Gender:</label>
+       
+        <input type="radio" name="gender" id="male" value="Male" id="male">
+        <label for="Male">Male</label>
+        <input type="radio" name="gender" id="female" value="Female" id="female">
+        <label for="Female">Female</label>
+        <input type="radio" name="gender" id="other" value="Other" id="other">
+        <label for="Other">Other</label>
+        <br>
+        <br>
+        <label for="city">City:</label>
+        <select name="city" id="city" multiple>
+            <option value="Chernivtsi">Chernivtsi</option>
+            <option value="Ternopil">Ternopil</option>
+            <option value="Kyiv">Kyiv</option>
+            <option value="kharkiv">Kharkiv</option>
+        </select>
+        <br>
+        <br>
+        <label for="adress">Adress:</label>
+        <textarea name="adress" id="adress" cols="30" rows="10"></textarea>
+        <br>
+        <br>
+        <label for="languages">languages:</label>
+        <input type="checkbox" id="english" name="languages" value="English">
+        <label for="english">English</label>
+        <input type="checkbox" id="ukrainian" name="languages" value="Ukrainian">
+        <label for="english">Ukrainian</label>
+        <input type="checkbox" id="poland" name="languages" value="Poland">
+        <label for="english">Poland</label>
+        <input type="checkbox" id="deuthcland" name="languages" value="Deuthcland">
+        <label for="english">Deuthcland</label>
+        <br>
+        <br>
+        <button type="submit" id="submit">Sumbit</button>
+    </form>
+        <h2></h2>
+        <p id="form1"></p>
+        <p id="form2"></p>
+        <p id="form3"></p>
+        <p id="form4"></p>
+        <p id="form5"></p>
+        <p id="form6"></p>
+</body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title>Форма реєстрації</title>
+  <style>
+    table {
+      border-collapse: collapse;
+    }
+
+    table, th, td {
+      border: 1px solid black;
+    }
+
+    th, td {
+      padding: 5px;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+  <h1>Форма реєстрації</h1>
+  <form id="registration-form">
+    <label for="first-name">Ім'я:</label>
+    <input type="text" id="first-name" name="first-name" required><br>
+
+    <label for="last-name">Прізвище:</label>
+    <input type="text" id="last-name" name="last-name" required><br>
+
+    <label for="birthdate">Дата народження:</label>
+    <input type="text" id="birthdate" name="birthdate" required><br>
+
+    <label>Стать:</label><br>
+    <input type="radio" id="male" name="gender" value="male">
+    <label for="male">Чоловік</label>
+    <input type="radio" id="female" name="gender" value="female">
+    <label for="female">Жінка</label><br>
+
+    <label for="city">Місто:</label>
+    <select id="city" name="city">
+      <option value="Київ">Київ</option>
+      <option value="Львів">Львів</option>
+      <option value="Одеса">Одеса</option>
+      <option value="Харків">Харків</option>
+    </select><br>
+
+    <label for="address">Адреса:</label><br>
+    <textarea id="address" name="address"></textarea><br>
+
+    <label>Мови, якими володіє:</label><br>
+    <input type="checkbox" id="english" name="languages" value="english">
+    <label for="english">Англійська</label>
+    <input type="checkbox" id="spanish" name="languages" value="spanish">
+    <label for="spanish">Іспанська</label><br>
+
+    <input type="button" value="Зберегти" onclick="showTable()">
+  </form>
+
+  <div id="result-table"></div>
+
+  <script>
+    function showTable() {
+      var form = document.getElementById("registration-form");
+      var resultTable = document.getElementById("result-table");
+
+      // Збираємо дані з форми
+      var firstName = form.elements["first-name"].value;
+      var lastName = form.elements["last-name"].value;
+      var birthdate = form.elements["birthdate"].value;
+      var gender = form.querySelector('input[name="gender"]:checked').value;
+      var city = form.elements["city"].value;
+      var address = form.elements["address"].value;
+      var languages = [];
+      var languageCheckboxes = form.querySelectorAll('input[name="languages"]:checked');
+      for (var i = 0; i < languageCheckboxes.length; i++) {
+        languages.push(languageCheckboxes[i].value);
+      }
+
+      // Виводимо дані в "таблиці"
+      resultTable.innerHTML = `
+        <h2>Результати реєстрації</h2>
+        <table>
+          <tr>
+            <th>Поле</th>
+            <th>Значення</th>
+          </tr>
+          <tr>
+            <td>Ім'я</td>
+            <td>${firstName}</td>
+          </tr>
+          <tr>
+            <td>Прізвище</td>
+            <td>${lastName}</td>
+          </tr>
+          <tr>
+            <td>Дата народження</td>
+            <td>${birthdate}</td>
+          </tr>
+          <tr>
+            <td>Стать</td>
+            <td>${gender}</td>
+          </tr>
+          <tr>
+            <td>Місто</td>
+            <td>${city}</td>
+          </tr>
+          <tr>
+            <td>Адреса</td>
+            <td>${address}</td>
+          </tr>
+          <tr>
+            <td>Мови</td>
+            <td>${languages.join(", ")}</td>
+          </tr>
+        </table>
+      `;
+    }
+  </script>
+</body>
+</html> -->
